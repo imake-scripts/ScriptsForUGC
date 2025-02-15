@@ -1,2 +1,1 @@
-print("olá deepseek!
-")
+print("olá deepseek!")
